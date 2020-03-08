@@ -26,6 +26,7 @@ hs_err_pid*
 #intellij
 .DS_Store
 .idea
+.iml
 
 #ignore dist folder
 */target/*
