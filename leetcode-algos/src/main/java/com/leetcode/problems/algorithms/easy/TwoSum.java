@@ -18,15 +18,6 @@ import java.util.Map;
  */
 public class TwoSum
 {
-    public static void main( String[] args )
-    {
-        int[] twoSum = new int[] {2, 7, 11,15};
-        int target = 9;
-        int[] result = twoSum(twoSum, target);
-        System.out.println( result);
-    }
-
-
     public static int[] twoSum(int[] nums, int target) {
 
         Map<Integer, Integer> valueIndexMap = new HashMap<>();
