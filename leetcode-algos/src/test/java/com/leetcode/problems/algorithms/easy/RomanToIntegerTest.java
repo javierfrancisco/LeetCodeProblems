@@ -18,6 +18,25 @@ public class RomanToIntegerTest
         String input = "MMXXII";
         int result = RomanToInteger.romanToInt(input);
 
-        assertEquals(2020, result);
+        assertEquals(2022, result);
     }
+
+    @Test
+    public void testRomanToIntegerFour()
+    {
+        String input = "IV";
+        int result = RomanToInteger.romanToInt(input);
+
+        assertEquals(4, result);
+    }
+
+    @Test
+    public void testRomanToInteger1994()
+    {
+        String input = "MCMXCIV";
+        int result = RomanToInteger.romanToInt(input);
+
+        assertEquals(1994, result);
+    }
+
 }

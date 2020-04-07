@@ -48,7 +48,67 @@ public class RomanToInteger {
 
 
     public static int romanToInt(String s) {
-        return 0;
+        int n = s.length();
+        int result = 0;
+        for (int i = 0; i < n; i++) {
+            char currentChar = s.charAt(i);
+            if (currentChar == 'M') {
+                result += 1000;
+            } else if (currentChar == 'C') {
+                if (i + 1 == n) {
+                    result += 100;
+                    continue;
+                }
+                char nextChar = s.charAt(i + 1);
+                if (nextChar == 'M') {
+                    i++;
+                    result += 900;
+                } else if (nextChar == 'D') {
+                    i++;
+                    result += 400;
+                }else {
+                    result += 100;
+                }
+            } else if (currentChar == 'X') {
+                if (i + 1 == n) {
+                    result += 10;
+                    continue;
+                }
+                char nextChar = s.charAt(i + 1);
+                if (nextChar == 'C') {
+                    i++;
+                    result += 90;
+                } else if (nextChar == 'L') {
+                    i++;
+                    result += 40;
+                }else {
+                    result += 10;
+                }
+            } else if (currentChar == 'D') {
+                result += 500;
+            } else if (currentChar == 'L') {
+                result += 50;
+            } else if (currentChar == 'V') {
+                result += 5;
+            } else if (currentChar == 'I') {
+                if (i + 1 == n) {
+                    result += 1;
+                    continue;
+                }
+                char nextChar = s.charAt(i + 1);
+                if (nextChar == 'X') {
+                    i++;
+                    result += 9;
+                } else if (nextChar == 'V') {
+                    i++;
+                    result += 4;
+                } else {
+                    result += 1;
+                }
+            }
+        }
+
+        return result;
     }
 
 
