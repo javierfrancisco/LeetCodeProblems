@@ -5,20 +5,31 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Unit test for TwoSum.
+ * Unit test for ClimbingStairs.
  */
-public class IsSubsequenceTest
+public class ClimbingStairsTest
 {
     /**
      * Rigorous Test :-)
      */
     @Test
-    public void testIsSubsequence()
+    public void testClimbingStairs()
     {
-        String s = "abc";
-        String t = "ahbgdc";
-        boolean result = IsSubsequence.isSubsequence(s, t);
-        assertEquals(true, result);
+        int n = 10;
+        int result = ClimbingStairs.climbStairs(n);
+        assertEquals(89, result);
     }
+
+    /**
+     * Rigorous Test :-)
+     */
+    @Test
+    public void testClimbingStairs2()
+    {
+        int n = 2;
+        int result = ClimbingStairs.climbStairs(n);
+        assertEquals(2, result);
+    }
+
 
 }
