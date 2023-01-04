@@ -2,7 +2,7 @@ package com.leetcode.problems.algorithms.medium;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertEquals
 
 /**
  * Unit test for ContainerWithMostWater.
