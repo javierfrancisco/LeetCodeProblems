@@ -31,10 +31,29 @@ public class RomanToIntegerTest
     }
 
     @Test
+    public void testRomanToIntegerFive()
+    {
+        String input = "V";
+        int result = RomanToInteger.romanToIntReDo(input);
+
+        assertEquals(5, result);
+    }
+
+    @Test
+    public void testRomanToIntegerThree()
+    {
+        String input = "III";
+        int result = RomanToInteger.romanToIntReDo(input);
+
+        assertEquals(3, result);
+    }
+    
+
+    @Test
     public void testRomanToInteger1994()
     {
         String input = "MCMXCIV";
-        int result = RomanToInteger.romanToInt(input);
+        int result = RomanToInteger.romanToIntReDo(input);
 
         assertEquals(1994, result);
     }

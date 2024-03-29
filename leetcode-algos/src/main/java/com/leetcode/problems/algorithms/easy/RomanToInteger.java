@@ -111,5 +111,74 @@ public class RomanToInteger {
         return result;
     }
 
+    public static int romanToIntReDo(String s) {
+
+        int n = s.length();
+        int result = 0;
+        //Roman Numbers Characters: I V X L C M;
+
+        for (int i = 0; i < n; i++) {
+
+            char current = s.charAt(i);
+
+            if (current == 'V') {
+                result += 5;
+            } else if (current == 'L') {
+                result += 50;
+            } else if (current == 'D') {
+                result += 500;
+            }else if (current == 'M') {
+                result += 1000;
+            } else if (current == 'I') {
+                if (i + 1 == n) {
+                    result += 1;
+                    continue;
+                }
+                char nextChar = s.charAt(i + 1);
+                if (nextChar == 'V') {
+                    i++;
+                    result += 4;
+                } else if (nextChar == 'X') {
+                    i++;
+                    result += 9;
+                } else {
+                    result += 1;
+                }
+            } else if (current == 'X') {
+                if (i + 1 == n) {
+                    result += 10;
+                    continue;
+                }
+                char nextChar = s.charAt(i + 1);
+                if (nextChar == 'L') {
+                    i++;
+                    result += 40;
+                } else if (nextChar == 'C') {
+                    i++;
+                    result += 90;
+                } else {
+                    result += 10;
+                }
+
+            } else if (current == 'C') {
+                if (i + 1 == n) {
+                    result += 100;
+                    continue;
+                }
+                char nextChar = s.charAt(i + 1);
+                if (nextChar == 'D') {
+                    i++;
+                    result += 400;
+                } else if (nextChar == 'M') {
+                    i++;
+                    result += 900;
+                } else {
+                    result += 100;
+                }
+            }
+        }
+
+        return result;
+    }
 
 }
