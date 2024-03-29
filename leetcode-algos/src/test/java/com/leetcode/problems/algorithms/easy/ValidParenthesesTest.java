@@ -18,7 +18,7 @@ public class ValidParenthesesTest
     {
         String input = "{[]}";
 
-        assertTrue(ValidParentheses.isValid2(input));
+        assertTrue(ValidParentheses.isValid3(input));
     }
 
     @Test
@@ -26,7 +26,7 @@ public class ValidParenthesesTest
     {
         String input = "{[}";
 
-        assertFalse(ValidParentheses.isValid2(input));
+        assertFalse(ValidParentheses.isValid3(input));
     }
 
     @Test
@@ -34,7 +34,7 @@ public class ValidParenthesesTest
     {
         String input = "()";
 
-        assertTrue(ValidParentheses.isValid2(input));
+        assertTrue(ValidParentheses.isValid3(input));
     }
 
     @Test
@@ -42,7 +42,7 @@ public class ValidParenthesesTest
     {
         String input = "{";
 
-        assertFalse(ValidParentheses.isValid2(input));
+        assertFalse(ValidParentheses.isValid3(input));
     }
 
 
@@ -51,7 +51,7 @@ public class ValidParenthesesTest
     {
         String input = "}";
 
-        assertFalse(ValidParentheses.isValid2(input));
+        assertFalse(ValidParentheses.isValid3(input));
     }
 
     @Test
@@ -59,6 +59,6 @@ public class ValidParenthesesTest
     {
         String input = "]";
 
-        assertFalse(ValidParentheses.isValid2(input));
+        assertFalse(ValidParentheses.isValid3(input));
     }
 }

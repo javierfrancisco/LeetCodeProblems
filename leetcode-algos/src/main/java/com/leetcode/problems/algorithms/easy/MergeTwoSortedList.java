@@ -18,7 +18,7 @@ import java.util.Map;
  * return [0, 1].
  *
  */
-public class TwoSum
+public class MergeTwoSortedList
 {
     public static int[] twoSum(int[] nums, int target) {
 

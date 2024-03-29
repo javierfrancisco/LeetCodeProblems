@@ -116,4 +116,37 @@ public class ValidParentheses {
         }
         return stackPointer == 0;
     }
+
+    public static boolean isValid3(String s) { 
+
+        Map<Character, Character> openSigns = new HashMap<>();
+        openSigns.put('(', ')');
+        openSigns.put('[', ']');
+        openSigns.put('{', '}');
+
+        Map<Character, Character> closeSigns = new HashMap<>();
+        closeSigns.put(')','(');
+        closeSigns.put(']','[');
+        closeSigns.put('}','{');
+
+        Stack<Character> stack = new Stack<>();
+
+        int n = s.length();
+        for (int i=0; i < n; i++) {
+            char current = s.charAt(i);
+
+            if (openSigns.containsKey(current)){
+                stack.add(current);
+            } else if (closeSigns.containsKey(current)) {
+                if (stack.isEmpty()) {
+                    return false;
+                }
+                char lastOpenSign = stack.pop();
+                if (lastOpenSign != closeSigns.get(current)) {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
 }

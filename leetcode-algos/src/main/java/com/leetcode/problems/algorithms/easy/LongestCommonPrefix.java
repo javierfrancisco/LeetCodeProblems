@@ -70,4 +70,32 @@ public class LongestCommonPrefix {
         }
         return longestPossiblePrefix.substring(0, prefixPointer);
     }
+
+
+    public String longestCommonPrefixNew(String[] strs) {
+
+        //Idea, iterate all items in array and get the lowest length,
+        // this can be our longest common prefix length
+        // then iterate from 0 to  the lowest length
+        // iterate all strings array
+        // get position in i, and compare to same i location with all strings
+        int n = strs[0].length();
+        String res = "";
+        int i = 0;
+        while (i < n) {
+            char current = strs[0].charAt(i);
+            for (int j = 1; j < strs.length; j++) {
+                if (i > strs[j].length() -1) {
+                    return res;
+                }
+                char nextChar = strs[j].charAt(i);
+                if (current != nextChar) {
+                    return res; 
+                }
+            }
+            res += current;
+            i++;
+        }
+        return res;
+    }
 }
